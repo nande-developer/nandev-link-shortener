@@ -1,0 +1,26 @@
+#name: Deploy to Staging
+#
+#on:
+#  push:
+#    branches: [ develop ]
+#
+#jobs:
+#  build:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - uses: actions/checkout@v2
+#
+#      - name: ssh-pipeline
+#        uses: cross-the-world/ssh-pipeline@v1.2.0
+#        with:
+#          host: ${{ secrets.STAGING_HOST }}
+#          port: 22
+#          user: ${{ secrets.STAGING_USER }}
+#          # ssh remote password
+#          pass: ${{ secrets.STAGING_PASSWORD }}
+#          script: |
+#            cd /path/to/your-app
+#            git pull
+#            yarn install
+#            pm2 update
